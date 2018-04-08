@@ -23,9 +23,7 @@ elif [ "$#" == "0" ]; then
   fi
   export PATH=/opt/zbox/:$PATH
   cat /opt/zbox/README && zbox start
-  if [ -n "${USER}" -a -n "${PASSWD}" ]; then
-    /opt/zbox/bin/htpasswd -b /opt/zbox/auth/users ${USER} ${PASSWD}
-  fi
+  /opt/zbox/bin/htpasswd -b /opt/zbox/auth/users admin Admin@2018
   tail -f /dev/null
 else
   exec "$@"
